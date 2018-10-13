@@ -6,7 +6,7 @@ This is a flashcard app where if you click the screen it hops from the question 
 ### App Walk-though
 `TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
+<img src="https://github.com/wlhunter00/FlashCardApp/blob/master/Flashcard1.0.gif?raw=true" width=200><br>
 
 
 ## Required
