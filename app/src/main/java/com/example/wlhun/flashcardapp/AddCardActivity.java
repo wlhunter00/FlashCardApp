@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class AddCardActivity extends AppCompatActivity {
 
@@ -14,27 +13,24 @@ public class AddCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_card);
 
-        if (getIntent().getStringExtra("type").equals("edit")) {
-            EditText tempQuestion = (EditText) findViewById(R.id.editTextQuestion);
-            EditText tempAnswer = (EditText) findViewById(R.id.editTestAnswer);
-            tempQuestion.setText(getIntent().getStringExtra("question"), TextView.BufferType.EDITABLE);
-            tempAnswer.setText(getIntent().getStringExtra("answer"), TextView.BufferType.EDITABLE);
-        }
-
         findViewById(R.id.backAddButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent data = new Intent();
+                data.putExtra("question", "test");
+                data.putExtra("answer", "test4");
+                data.putExtra("changed", false);
+                setResult(RESULT_OK, data);
                 finish();
             }
         });
         findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Question = ((EditText) findViewById(R.id.editTextQuestion)).getText().toString();
-                String Answer = ((EditText) findViewById(R.id.editTestAnswer)).getText().toString();
                 Intent data = new Intent();
-                data.putExtra("question", Question);
-                data.putExtra("answer", Answer);
+                data.putExtra("question", ((EditText) findViewById(R.id.editTextQuestion)).getText().toString());
+                data.putExtra("answer", ((EditText) findViewById(R.id.editTestAnswer)).getText().toString());
+                data.putExtra("changed", true);
                 setResult(RESULT_OK, data);
                 finish();
             }
