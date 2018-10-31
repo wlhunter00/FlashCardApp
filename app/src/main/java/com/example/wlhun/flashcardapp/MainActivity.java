@@ -28,17 +28,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent launchAddCard = new Intent(MainActivity.this, AddCardActivity.class);
-                launchAddCard.putExtra("type", "add");
+                launchAddCard.putExtra("edit", false);
                 MainActivity.this.startActivityForResult(launchAddCard, 100);
             }
         });
         findViewById(R.id.editButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView tempQuestion = (TextView) findViewById(R.id.flashcard_question);
-                TextView tempAnswer = (TextView) findViewById(R.id.flashcard_answer);
-                Intent launchEditCard = new Intent(MainActivity.this, AddCardActivity.class);
-                MainActivity.this.startActivityForResult(launchEditCard, 100);
+                String tempQuestion = ((TextView) findViewById(R.id.flashcard_question)).getText().toString();
+                String tempAnswer = ((TextView) findViewById(R.id.flashcard_answer)).getText().toString();
+                Intent launchAddCard = new Intent(MainActivity.this, AddCardActivity.class);
+                launchAddCard.putExtra("previousQuestion",tempAnswer );
+                launchAddCard.putExtra("previousAnswer", tempQuestion);
+                launchAddCard.putExtra("edit", true);
+                MainActivity.this.startActivityForResult(launchAddCard, 100);
             }
         });
     }
