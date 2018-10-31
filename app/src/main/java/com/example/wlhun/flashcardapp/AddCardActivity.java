@@ -33,6 +33,7 @@ public class AddCardActivity extends AppCompatActivity {
                 data.putExtra("question", "");
                 data.putExtra("answer", "");
                 data.putExtra("changed", false);
+                data.putExtra("edited", false);
                 setResult(RESULT_OK, data);
                 finish();
             }

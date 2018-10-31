@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 String tempQuestion = ((TextView) findViewById(R.id.flashcard_question)).getText().toString();
                 String tempAnswer = ((TextView) findViewById(R.id.flashcard_answer)).getText().toString();
                 Intent launchAddCard = new Intent(MainActivity.this, AddCardActivity.class);
-                launchAddCard.putExtra("previousQuestion",tempAnswer );
-                launchAddCard.putExtra("previousAnswer", tempQuestion);
+                launchAddCard.putExtra("previousQuestion",tempQuestion );
+                launchAddCard.putExtra("previousAnswer", tempAnswer);
                 launchAddCard.putExtra("edit", true);
                 MainActivity.this.startActivityForResult(launchAddCard, 100);
             }
@@ -56,15 +56,15 @@ public class MainActivity extends AppCompatActivity {
             answer1 = data.getExtras().getString("answer");
             if (data.getExtras().getBoolean("changed")) {
                 changeCard(question1, answer1);
+                if(data.getExtras().getBoolean("edited")){
+                    Snackbar.make(findViewById(android.R.id.content), "Card Sucessfully Edited!", Snackbar.LENGTH_SHORT).show();
+                }
+                else{
+                    Snackbar.make(findViewById(android.R.id.content), "Card Sucessfully Created!", Snackbar.LENGTH_SHORT).show();
+                }
             }
             if (findViewById(R.id.flashcard_answer).getVisibility() == View.VISIBLE) {
                 flipCard();
-            }
-            if(data.getExtras().getBoolean("edited")){
-                Snackbar.make(findViewById(android.R.id.content), "Card Sucessfully Edited!", Snackbar.LENGTH_SHORT).show();
-            }
-            else{
-                Snackbar.make(findViewById(android.R.id.content), "Card Sucessfully Created!", Snackbar.LENGTH_SHORT).show();
             }
         }
 
