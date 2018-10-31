@@ -4,7 +4,7 @@
 This is a flashcard app where if you click the screen it hops from the question to the answer And if you tap again it will hop back.
 
 ### App Walk-though
-<img src="https://github.com/wlhunter00/FlashCardApp/blob/master/Flashcard2.0.gif?raw=true" width=200><br>
+<img src="https://github.com/wlhunter00/FlashCardApp/blob/first/Flashcard2.0.gif" width=200><br>
 
 
 ## Required
