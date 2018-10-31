@@ -2,6 +2,7 @@ package com.example.wlhun.flashcardapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -58,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
             }
             if (findViewById(R.id.flashcard_answer).getVisibility() == View.VISIBLE) {
                 flipCard();
+            }
+            if(data.getExtras().getBoolean("edited")){
+                Snackbar.make(findViewById(android.R.id.content), "Card Sucessfully Edited!", Snackbar.LENGTH_SHORT).show();
+            }
+            else{
+                Snackbar.make(findViewById(android.R.id.content), "Card Sucessfully Created!", Snackbar.LENGTH_SHORT).show();
             }
         }
 
