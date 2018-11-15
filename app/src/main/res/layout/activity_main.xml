@@ -43,10 +43,10 @@
         android:id="@+id/addButton"
         android:layout_width="50dp"
         android:layout_height="55dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="13dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="19dp"
         android:src="@drawable/add" />
 
     <ImageView
@@ -55,5 +55,15 @@
         android:layout_height="47dp"
         android:layout_alignBottom="@+id/addButton"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp"
         android:src="@drawable/edit" />
+
+    <ImageView
+        android:id="@+id/rightArrow"
+        android:layout_width="109dp"
+        android:layout_height="108dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/flashcard_question"
+        android:src="@drawable/rightcard" />
+
 </RelativeLayout>
